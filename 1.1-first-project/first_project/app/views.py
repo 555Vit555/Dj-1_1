@@ -11,8 +11,8 @@ def home_view(request):
     # функцию `reverse`
     pages = {
         'Главная страница': reverse('home'),
-        'Показать текущее время': '',
-        'Показать содержимое рабочей директории': ''
+        'Показать текущее время': reverse('time'),
+        'Показать содержимое рабочей директории': reverse('workdir')
     }
     
     # context и параметры render менять не нужно
@@ -36,11 +36,14 @@ def workdir_view(request):
     # который возвращает список файлов в рабочей 
     # директории
     # Получаем текущую рабочую директорию
-    current_dir = os.getcwd()
+    # current_dir = os.getcwd()
+    #
+    # # Получаем список файлов в текущей директории
+    # file_list = " ".join(os.listdir(current_dir))
+    #
+    # # Возвращаем список файлов в качестве ответа
+    list = os.listdir(path='.')
+    file_list = '  '.join(list)
 
-    # Получаем список файлов в текущей директории
-    file_list = " ".join(os.listdir(current_dir))
-
-    # Возвращаем список файлов в качестве ответа
     return HttpResponse(file_list)
     #raise NotImplemented
