@@ -10,3 +10,13 @@ class Book(models.Model):
 
     def __str__(self):
         return self.name + " " + self.author
+
+# class Phone(models.Model):
+#     #id = models.CharField(u'id', max_length=64)
+#     name = models.CharField(u'name', max_length=64)
+#     price = models.CharField(u'price', max_length=64)
+#     image = models.CharField(u'image', max_length=64)
+#     release_date = models.CharField(u'release_date', max_length=64)
+#     lte_exists = models.CharField(u'lte_exists', max_length=64)
+#     slug = models.CharField(u'slug', max_length=64)
+
